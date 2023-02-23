@@ -1,0 +1,21 @@
+To give a recursive equation that relates the life length of x, denoted as ℓ(x), to the life length of f(x), denoted as ℓ(f(x)), we consider two cases:
+
+    When x = 1:
+    In this case, f(x) = 1, and we have ℓ(f(x)) = ℓ(1) = 1. Therefore, the recursive equation is:
+    ℓ(x) = 0, when x = 1
+    ℓ(f(x)) = 1, when x = 1
+
+    When x ≠ 1:
+    Let x0 = x and let xi = f(xi-1) for i > 0. We want to find a recursive equation relating ℓ(xi) to ℓ(xi+1) for i ≥ 0. We observe that if xi = 1, then xi+1 = 1,
+    and we have:
+    ℓ(xi) = ℓ(xi+1) + 1, when xi ≠ 1 and xi+1 ≠ 1
+    ℓ(xi) = 0, when xi = 1
+    ℓ(xi+1) = 1, when xi ≠ 1 and xi+1 ≠ 1
+
+Therefore, the recursive equation is:
+ℓ(x) = 0, when x = 1
+ℓ(x) = ℓ(f(x)) + 1, when x ≠ 1 and f(x) ≠ 1
+ℓ(f(x)) = 1, when x ≠ 1 and f(x) ≠ 1
+
+Note that the second equation uses the fact that if x ≠ 1 and f(x) ≠ 1, then we can apply f to x to obtain f(f(x)) = f(x2), and then apply
+f to x2 to obtain f(x3), and so on, until we reach 1. The number of times we apply f before reaching 1 is equal to the life length of x.
